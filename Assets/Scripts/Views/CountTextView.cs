@@ -30,9 +30,12 @@ namespace SCA
             _text.text = string.Format("Count {0} = {1}", Type.ToString(), count);
         }
 
-        void OnCountChanged(int new_count)
+        void OnCountChanged(int new_count, CountType type)
         {
-            UpdateText(new_count);
+            if (type == Type)
+            {
+                UpdateText(new_count);
+            }
         }
     }
 }
