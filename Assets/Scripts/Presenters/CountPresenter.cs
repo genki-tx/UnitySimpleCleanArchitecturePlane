@@ -9,12 +9,12 @@ namespace SCA
     // Presenter can inherit Monobehaviour
     public class CountPresenter : MonoBehaviour, ICountPresenter
     {
-        public void AddListnerOnCountChanged(Action<int> listener)
+        public void AddListnerOnCountChanged(Action<int, CountType> listener)
         {
             // You may need to consider removing handler
             _usecase.OnCountChanged += new EventHandler<CounterEventArgs>(delegate (object sender, CounterEventArgs event_arg)
             {
-                listener(event_arg.Count);
+                listener(event_arg.Count, event_arg.Type);
             });
         }
 

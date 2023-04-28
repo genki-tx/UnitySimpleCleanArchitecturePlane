@@ -29,7 +29,7 @@ namespace SCA
             _text.text = string.Format("Total = {0}", total);
         }
 
-        void OnCountChanged(int count)
+        void OnCountChanged(int count, CountType type)
         {
             UpdateCount();
         }
